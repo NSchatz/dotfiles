@@ -1,0 +1,150 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 0,
+    "margin-top": 6,
+    "margin-left": 8,
+    "margin-right": 8,
+    "fixed-center": true,
+    "exclusive": true,
+    "reload_style_on_change": true,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "network", "backlight", "battery", "tray", "custom/power"],
+
+    // ── Hyprland Modules ──────────────────────────────────────────
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "󰮯",
+            "default": "󰊠",
+            "empty": "󰑊"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "sort-by": "id",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "hyprland/submap": {
+        "format": "󰌌 {}",
+        "max-length": 20,
+        "tooltip": false
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50,
+        "separate-outputs": true,
+        "icon": true,
+        "icon-size": 18
+    },
+
+    // ── Center ────────────────────────────────────────────────────
+
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰃭 {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "format": {
+                "months": "<span color='#cba6f7'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'>{}</span>",
+                "weeks": "<span color='#7f849c'>W{}</span>",
+                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+                "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // ── Right Modules ─────────────────────────────────────────────
+
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "spotify": "󰓇",
+            "firefox": "󰈹"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "dynamic-order": ["title", "artist"],
+        "dynamic-separator": " - ",
+        "max-length": 35
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "󰻠 {usage}%",
+        "on-click": "kitty --title htop -e htop"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "{used:.1f}GiB / {total:.1f}GiB"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂯 {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-disconnected": "󰤭 Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n󰕒 {bandwidthUpBits}\n󰇚 {bandwidthDownBits}",
+        "format-alt": "󰤨 {essid}",
+        "on-click-right": "nm-connection-editor"
+    },
+
+    "backlight": {
+        "format": "󰃞 {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}\n{power:.1f}W"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

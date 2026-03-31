@@ -1,0 +1,3 @@
+# Hyprland-specific environment variables
+# Most env vars are set in ~/.config/uwsm/env (shared across sessions)
+# Add Hyprland-only overrides here if needed

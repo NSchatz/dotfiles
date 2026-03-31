@@ -1,0 +1,13 @@
+\.git
+\.gitignore
+\.gitmodules
+^README.*
+^LICENSE.*
+^COPYING
+\.stowrc
+^packages\.txt
+^aur-packages\.txt
+^setup\.sh
+^teardown\.sh
+^Makefile
+^\.stow-local-ignore

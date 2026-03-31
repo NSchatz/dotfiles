@@ -1,0 +1,66 @@
+/* ── Catppuccin Mocha - wlogout Theme ────────────────────────── */
+
+/* Full-screen background overlay */
+window {
+    background-color: rgba(17, 17, 27, 0.85);
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+/* All buttons base style */
+button {
+    background-color: rgba(49, 50, 68, 0.6);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    color: #cdd6f4;
+    font-size: 18px;
+    margin: 12px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(69, 71, 90, 0.8);
+}
+
+button:focus {
+    background-color: rgba(69, 71, 90, 0.8);
+    border-color: #cba6f7;
+}
+
+/* Per-button icons and hover accent colors */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#lock:hover {
+    border-color: #89b4fa;
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#logout:hover {
+    border-color: #a6e3a1;
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#suspend:hover {
+    border-color: #f9e2af;
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+#reboot:hover {
+    border-color: #cba6f7;
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#shutdown:hover {
+    border-color: #f38ba8;
+}

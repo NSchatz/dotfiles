@@ -1,0 +1,13 @@
+# Secrets
+*.secret
+.env
+.ssh/
+.gnupg/
+
+# Machine-specific overrides
+**/local.conf
+
+# OS
+.DS_Store
+*.swp
+*~
