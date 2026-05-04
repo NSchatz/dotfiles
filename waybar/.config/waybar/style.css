@@ -124,7 +124,8 @@ window#waybar.empty #window {
 #memory,
 #mpris,
 #tray,
-#custom-power {
+#custom-power,
+#custom-caffeine {
     padding: 0 10px;
     color: @text;
     transition: all 0.2s ease;
@@ -140,6 +141,8 @@ window#waybar.empty #window {
 #battery        { color: @green; }
 #mpris          { color: @pink; }
 #custom-power   { color: @red; padding-right: 6px; }
+#custom-caffeine        { color: @overlay1; }
+#custom-caffeine.on     { color: @yellow; }
 
 /* ── Hover Effects ───────────────────────────────────────────── */
 #clock:hover          { color: @sapphire; }
@@ -151,6 +154,8 @@ window#waybar.empty #window {
 #battery:hover        { color: @teal; }
 #mpris:hover          { color: @rosewater; }
 #custom-power:hover   { color: @flamingo; }
+#custom-caffeine:hover     { color: @peach; }
+#custom-caffeine.on:hover  { color: @peach; }
 
 /* ── State-Based Styling ─────────────────────────────────────── */
 #battery.warning      { color: @yellow; }

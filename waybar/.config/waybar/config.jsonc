@@ -12,7 +12,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "network", "backlight", "battery", "tray", "custom/power"],
+    "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "network", "backlight", "battery", "custom/caffeine", "tray", "custom/power"],
 
     // ── Hyprland Modules ──────────────────────────────────────────
 
@@ -146,5 +146,13 @@
         "format": "󰐥",
         "tooltip": false,
         "on-click": "wlogout"
+    },
+
+    "custom/caffeine": {
+        "exec": "~/.config/hypr/scripts/caffeine.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "~/.config/hypr/scripts/caffeine.sh toggle",
+        "format": "{}"
     }
 }
